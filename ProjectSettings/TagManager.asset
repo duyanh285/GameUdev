@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - bg
+  - Enemy
+  - Hero
   layers:
   - Default
   - TransparentFX
@@ -38,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 3902669139
+    locked: 0
+  - name: Front
+    uniqueID: 554348667
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
