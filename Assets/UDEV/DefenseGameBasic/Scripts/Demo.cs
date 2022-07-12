@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Demo : MonoBehaviour
 {
-    public Transform myTransform;
-    public SpriteRenderer sp;
-    public Demo demoScript;
+    float score;
 
-    public GameObject heroPrefab;
+    //public Transform myTransform;
+    public SpriteRenderer sp;
+    //public Demo demoScript;
+
+    //public GameObject heroPrefab;
   //  public Transform myTransform;
 
     private void Awake()
     {
         // Debug.Log("Awake");
-        sp = GetComponent<SpriteRenderer>();
-        
-
+        sp = GetComponent<SpriteRenderer>();       
     }
 
     private void OnEnable()
@@ -28,16 +28,56 @@ public class Demo : MonoBehaviour
     {
         // Debug.Log("Start");
         // myTransform.localScale
-        if (heroPrefab)
+     /*   if (heroPrefab)
         {
             var heroClone = Instantiate(heroPrefab, new Vector3(3.5f, 1.5f, 0f), Quaternion.identity);
 
-            Destroy(heroClone,4f);
-        }
+            Destroy(heroClone, 4f);
+        }*/
 
-        if (sp)
-            sp.color = Color.red;
+      /*  if (sp)
+            sp.color = Color.red;*/
+
+
+        StartCoroutine(DemoCo());
+
+        // Invoke("Work", 3);
+
+        /* score += 10;
+
+         PlayerPrefs.SetFloat("score", score);
+
+         float scoreCopy = PlayerPrefs.GetFloat("score", 0);
+         Debug.Log(scoreCopy);
+ */
+
+        score = PlayerPrefs.GetFloat("score", 0);
+        score += 1;
+        PlayerPrefs.SetFloat("score", score);
+        Debug.Log(score);
     }
+
+
+
+    private IEnumerator DemoCo()
+    {
+        yield return new WaitForSeconds(3);
+        // Debug.Log("dang xu li cong viec 1");
+        Debug.Log(GetComponent<SpriteRenderer>().color = Color.green);
+        yield return new WaitForSeconds(2);
+       // Debug.Log("dang xu li cong viec 2");
+        Debug.Log(GetComponent<SpriteRenderer>().color = Color.yellow);
+        yield return new WaitForSeconds(3);
+       // Debug.Log("dang xu li cong viec 2");
+        Debug.Log(GetComponent<SpriteRenderer>().color = Color.red);
+    }
+
+    /*private void Work()
+    {
+        Debug.Log("Conmg viec can thuc hien");
+        Debug.Log(GetComponent<SpriteRenderer>().color = Color.green);
+        Debug.Log(GetComponent<SpriteRenderer>().color = Color.yellow);
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -61,4 +101,35 @@ public class Demo : MonoBehaviour
     {
        // Debug.Log("OnDestroy");
     }
+/*
+    private void OnCollisionEnter2D(Collision2D collision)//chay 1 lan
+    {
+       // Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().color = Color.green);
+        Debug.Log("Da va cham voi nhau");
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)//chay lien tuc
+    {
+        Debug.Log("2 doi tuong va cham");
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)//chay dang va cham 1 li do gi do dung lai
+    {
+        Debug.Log("2 doi tuong ko con va cham nhau");
+    }*/
+
+    /*  private void OnTriggerEnter2D(Collider2D collision)
+      {
+          Debug.Log("Da va cham voi nhau");
+      }
+
+      private void OnTriggerStay2D(Collider2D collision)
+      {
+          Debug.Log("2 doi tuong game dang va cham voi nhau");
+      }
+
+      private void OnTriggerExity2D(Collider2D collision)
+      {
+          Debug.Log("2 doi tuong game ko cham voi nhau");
+      }*/
 }

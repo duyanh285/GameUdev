@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bg
   - Enemy
-  - Hero
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX
@@ -16,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Dead
   - 
   - 
   - 
@@ -41,11 +40,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BG
-    uniqueID: 3902669139
+  - name: Background
+    uniqueID: 3887742927
     locked: 0
-  - name: Front
-    uniqueID: 554348667
+  - name: Gameplay
+    uniqueID: 1856956525
     locked: 0
   - name: Default
     uniqueID: 0
