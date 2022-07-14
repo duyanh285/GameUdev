@@ -5,8 +5,8 @@ using UnityEngine;
 public class Demo : MonoBehaviour
 {
     float score;
-
-    //public Transform myTransform;
+    float time;
+    public Transform myTransform;
     public SpriteRenderer sp;
     //public Demo demoScript;
 
@@ -28,18 +28,18 @@ public class Demo : MonoBehaviour
     {
         // Debug.Log("Start");
         // myTransform.localScale
-     /*   if (heroPrefab)
-        {
-            var heroClone = Instantiate(heroPrefab, new Vector3(3.5f, 1.5f, 0f), Quaternion.identity);
+        /*   if (heroPrefab)
+           {
+               var heroClone = Instantiate(heroPrefab, new Vector3(3.5f, 1.5f, 0f), Quaternion.identity);
 
-            Destroy(heroClone, 4f);
-        }*/
+               Destroy(heroClone, 4f);
+           }*/
 
-      /*  if (sp)
-            sp.color = Color.red;*/
+        /*  if (sp)
+              sp.color = Color.red;*/
 
 
-        StartCoroutine(DemoCo());
+        //StartCoroutine(DemoCo());
 
         // Invoke("Work", 3);
 
@@ -51,15 +51,20 @@ public class Demo : MonoBehaviour
          Debug.Log(scoreCopy);
  */
 
-        score = PlayerPrefs.GetFloat("score", 0);
+        /*score = PlayerPrefs.GetFloat("score", 0);
         score += 1;
         PlayerPrefs.SetFloat("score", score);
-        Debug.Log(score);
+        Debug.Log(score);*/
+
+        time = PlayerPrefs.GetFloat("time", 0);
+        time += 1;
+        PlayerPrefs.SetFloat("time", time);
+        Debug.Log(time);
     }
 
 
 
-    private IEnumerator DemoCo()
+   /* private IEnumerator DemoCo()
     {
         yield return new WaitForSeconds(3);
         // Debug.Log("dang xu li cong viec 1");
@@ -70,7 +75,7 @@ public class Demo : MonoBehaviour
         yield return new WaitForSeconds(3);
        // Debug.Log("dang xu li cong viec 2");
         Debug.Log(GetComponent<SpriteRenderer>().color = Color.red);
-    }
+    }*/
 
     /*private void Work()
     {
@@ -101,10 +106,10 @@ public class Demo : MonoBehaviour
     {
        // Debug.Log("OnDestroy");
     }
-/*
-    private void OnCollisionEnter2D(Collision2D collision)//chay 1 lan
+
+    /*private void OnCollisionEnter2D(Collision2D collision)//chay 1 lan
     {
-       // Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().color = Color.green);
+        // Debug.Log(collision.gameObject.GetComponent<SpriteRenderer>().color = Color.green);
         Debug.Log("Da va cham voi nhau");
     }
 
@@ -118,18 +123,20 @@ public class Demo : MonoBehaviour
         Debug.Log("2 doi tuong ko con va cham nhau");
     }*/
 
-    /*  private void OnTriggerEnter2D(Collider2D collision)
-      {
-          Debug.Log("Da va cham voi nhau");
-      }
+   /* private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Da va cham voi nhau");
+    }
 
-      private void OnTriggerStay2D(Collider2D collision)
-      {
-          Debug.Log("2 doi tuong game dang va cham voi nhau");
-      }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("2 doi tuong game dang va cham voi nhau");
+    }
 
-      private void OnTriggerExity2D(Collider2D collision)
-      {
-          Debug.Log("2 doi tuong game ko cham voi nhau");
-      }*/
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("2 doi tuong game ko va cham voi nhau");
+    }
+    */
 }

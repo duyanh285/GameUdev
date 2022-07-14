@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &271341326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 554348667
-  m_SortingLayer: -1
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 21a5e3db2e0b8334388dedc07c99979b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768f53335846c2643a549f79c9493f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
   sp: {fileID: 0}
 --- !u!1 &1979639656
 GameObject:
@@ -570,4 +571,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768f53335846c2643a549f79c9493f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
   sp: {fileID: 0}
