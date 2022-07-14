@@ -65,6 +65,7 @@ namespace DA.DefrnseBasic
             {
                 m_anim.SetTrigger(Const.DEAD_ANIM);
                 m_isDead = true;
+                Debug.Log("player die");
 
             }
         }
