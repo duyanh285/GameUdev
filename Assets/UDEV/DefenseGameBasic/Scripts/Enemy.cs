@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DA.DefrnseBasic
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour,IComponentChecking
     {
         public float speed;
         public float atkDistance;//khoang cach enemy tan cong
@@ -24,13 +24,17 @@ namespace DA.DefrnseBasic
 
         }
 
+        public bool IsComponentsNull()
+        {
+            return m_amin == null || m_rb == null || m_player == null;
+        }
         // Update is called once per frame
         void Update()
         {
-            if (m_rb == null || m_player == null) return;
+            if (IsComponentsNull()) return;//kiem tra = null ngat het cau lenh
 
-            if (m_rb)
-                m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);
+          /*  if (m_rb)
+                m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);*/
 
             if (Vector2.Distance(m_player.transform.position, 
                 transform.position) <= atkDistance)
