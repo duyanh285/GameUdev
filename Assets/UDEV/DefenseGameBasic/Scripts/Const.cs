@@ -13,7 +13,7 @@ namespace DA.DefrnseBasic
         public const string ATTACK_ANIM = "Attack";
         public const string DEAD_ANIM = "Dead";
 
-        public const string DEAD_PLAYER = "Dead";
+        public const string DEAD_LAYER = "Dead";
 
         public const string BEST_SCORE_PREF = "best_score";
         public const string PLAYER_PREFIX_PREF = "player_";

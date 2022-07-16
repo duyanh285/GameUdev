@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 127680072}
   - component: {fileID: 7197492965625394515}
   - component: {fileID: 1257871207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,13 +96,13 @@ GameObject:
   - component: {fileID: 2197813317109660574}
   - component: {fileID: 1565926803}
   - component: {fileID: 916587912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hero_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3073655190976541783
 Transform:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.051780045, y: -0.80506516}
+  m_Offset: {x: -0.027076125, y: -0.80506516}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -232,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8963673, y: 1.8283253}
+  m_Size: {x: 0.84695935, y: 1.8283253}
   m_EdgeRadius: 0
 --- !u!114 &916587912
 MonoBehaviour:
@@ -246,4 +246,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b955b98016b79446ab7ec74e8ec41aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkRate: 0.8
+  atkRate: 0.7
