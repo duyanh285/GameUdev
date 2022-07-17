@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IComponentChecking 
+namespace DA.DefrnseBasic
 {
-    bool IsComponentsNull();
+    public interface IComponentChecking
+    {
+        bool IsComponentsNull();
+    }
 }
