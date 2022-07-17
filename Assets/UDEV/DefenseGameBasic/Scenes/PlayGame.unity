@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803e58d35360ba499ff76a87effbff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 1.5
+  spawnTime: 2.5
   enemyPrefabs:
   - {fileID: -4308950358566658077, guid: bef81146df05d764ea42402d863c8f34, type: 3}
   - {fileID: -4308950358566658077, guid: 38e9b648af30bc345bee974f31cbf6e0, type: 3}
@@ -271,7 +271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586949326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019078901, y: -0.10612666, z: -0.039925788}
+  m_LocalPosition: {x: 7.54, y: -0.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -426,11 +426,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hero_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 3073655190976541786, guid: f04cc08562da30c4d9494064a34cccc3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f04cc08562da30c4d9494064a34cccc3, type: 3}

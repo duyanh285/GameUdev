@@ -4,19 +4,24 @@ using UnityEngine;
 
 namespace DA.DefrnseBasic
 {
-    public class Enemy : MonoBehaviour,IComponentChecking
+    public class Enemy : MonoBehaviour , IComponentChecking
     {
         public float speed;
         public float atkDistance;//khoang cach enemy tan cong
         private Animator m_amin;
         private Rigidbody2D m_rb;
         private Player m_player;
+        private bool m_isDead;
+
+        private GameManager m_gm;
 
         private void Awake()
         {
             m_amin = GetComponent<Animator>();
             m_rb = GetComponent<Rigidbody2D>();
             m_player = FindObjectOfType<Player>();
+            m_gm = FindObjectOfType<GameManager>();
+
         }
         // Start is called before the first frame update
         void Start()
@@ -53,13 +58,18 @@ namespace DA.DefrnseBasic
 
         public void Die()
         {
-            if (IsComponentsNull()) return;
+            if (IsComponentsNull() || m_isDead) return;
 
+            m_isDead = true;
             m_amin.SetTrigger(Const.DEAD_ANIM);
             m_rb.velocity = Vector2.zero;
 
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
             Debug.Log("Die");
+            if (m_gm)
+                m_gm.Score++;
+
+            Destroy(gameObject, 2f);
         }
     }
 }

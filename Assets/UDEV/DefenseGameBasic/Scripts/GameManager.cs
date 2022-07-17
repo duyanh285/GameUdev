@@ -10,6 +10,11 @@ namespace DA.DefrnseBasic
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         private bool m_isGameover;
+        private int m_score;
+        
+
+        public int Score { get => m_score; set => m_score = value; }
+
 
         // Start is called before the first frame update
         void Start()
