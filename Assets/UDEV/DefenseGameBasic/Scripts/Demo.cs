@@ -39,7 +39,7 @@ public class Demo : MonoBehaviour
               sp.color = Color.red;*/
 
 
-        //StartCoroutine(DemoCo());
+        StartCoroutine(DemoCo());
 
         // Invoke("Work", 3);
 
@@ -64,18 +64,18 @@ public class Demo : MonoBehaviour
 
 
 
-   /* private IEnumerator DemoCo()
+    private IEnumerator DemoCo()
     {
         yield return new WaitForSeconds(3);
         // Debug.Log("dang xu li cong viec 1");
         Debug.Log(GetComponent<SpriteRenderer>().color = Color.green);
         yield return new WaitForSeconds(2);
-       // Debug.Log("dang xu li cong viec 2");
+        // Debug.Log("dang xu li cong viec 2");
         Debug.Log(GetComponent<SpriteRenderer>().color = Color.yellow);
         yield return new WaitForSeconds(3);
-       // Debug.Log("dang xu li cong viec 2");
+        // Debug.Log("dang xu li cong viec 2");
         Debug.Log(GetComponent<SpriteRenderer>().color = Color.red);
-    }*/
+    }
 
     /*private void Work()
     {
