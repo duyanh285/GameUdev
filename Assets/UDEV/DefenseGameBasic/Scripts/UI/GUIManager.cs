@@ -19,7 +19,7 @@ namespace DA.DefrnseBasic
 
         }
 
-        public void ShowGameGui(bool isShow)
+        public void ShowGameGUI(bool isShow)
         {
             if (gameGUI)
                 gameGUI.SetActive(isShow);

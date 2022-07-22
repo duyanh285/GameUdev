@@ -69,12 +69,17 @@ namespace DA.DefrnseBasic
             m_rb.velocity = Vector2.zero;
 
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
+
             Debug.Log("Die");
            // if (m_gm)
-                m_gm.Score++;
+               
+            m_gm.Score++;
             int coinBonus = Random.Range(minCoinBouns, maxCoinBouns);
             //Debug.Log(coinBonus);
-            Pref.coins = coinBonus;
+            
+            Pref.coins += coinBonus;
+            if (m_gm.guiMng)
+                m_gm.guiMng.UpdateGameplayCoins();
 
             Destroy(gameObject, 2f);
         }

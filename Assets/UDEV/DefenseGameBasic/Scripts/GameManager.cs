@@ -5,10 +5,11 @@ using UnityEngine;
 
 namespace DA.DefrnseBasic
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour,IComponentChecking
     {
         public float spawnTime;
         public Enemy[] enemyPrefabs;
+        public GUIManager guiMng;
         private bool m_isGameover;
         private int m_score;
         
@@ -19,7 +20,23 @@ namespace DA.DefrnseBasic
         // Start is called before the first frame update
         void Start()
         {
+            if (IsComponentsNull()) return;
+
+            guiMng.ShowGameGUI(false);
+            guiMng.UpdateMainCoins();
+        }
+
+        public void PlayGame()
+        {
             StartCoroutine(SpawnEnemy());
+
+            guiMng.ShowGameGUI(true);
+            guiMng.UpdateGameplayCoins();
+        }
+
+        public bool IsComponentsNull()
+        {
+            return guiMng == null;
         }
 
         // Update is called once per frame
