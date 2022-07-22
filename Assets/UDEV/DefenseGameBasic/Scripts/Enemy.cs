@@ -73,7 +73,7 @@ namespace DA.DefrnseBasic
            // if (m_gm)
                 m_gm.Score++;
             int coinBonus = Random.Range(minCoinBouns, maxCoinBouns);
-            Debug.Log(coinBonus);
+            //Debug.Log(coinBonus);
             Pref.coins = coinBonus;
 
             Destroy(gameObject, 2f);
