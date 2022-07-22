@@ -8,6 +8,10 @@ namespace DA.DefrnseBasic
     {
         public float speed;
         public float atkDistance;//khoang cach enemy tan cong
+        public int minCoinBouns;
+        public int maxCoinBouns;
+
+
         private Animator m_amin;
         private Rigidbody2D m_rb;
         private Player m_player;
@@ -31,7 +35,7 @@ namespace DA.DefrnseBasic
 
         public bool IsComponentsNull()
         {
-            return m_amin == null || m_rb == null || m_player == null;
+            return m_amin == null || m_rb == null || m_player == null || m_gm == null ;
         }
         // Update is called once per frame
         void Update()
@@ -66,8 +70,11 @@ namespace DA.DefrnseBasic
 
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
             Debug.Log("Die");
-            if (m_gm)
+           // if (m_gm)
                 m_gm.Score++;
+            int coinBonus = Random.Range(minCoinBouns, maxCoinBouns);
+            Debug.Log(coinBonus);
+            Pref.coins = coinBonus;
 
             Destroy(gameObject, 2f);
         }
