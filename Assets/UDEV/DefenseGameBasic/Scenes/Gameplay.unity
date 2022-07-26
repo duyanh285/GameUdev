@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeGUI: {fileID: 420450978}
   gameGUI: {fileID: 1742339828}
-  gameoverDialog: {fileID: 0}
+  gameoverDialog: {fileID: 889987621}
   mainCoinTxt: {fileID: 1806800492}
   gameplayCoinTxt: {fileID: 794139500}
 --- !u!4 &136911388
@@ -1224,7 +1224,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 352789495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889987621}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &352789495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3226,6 +3237,7 @@ GameObject:
   - component: {fileID: 889987618}
   - component: {fileID: 889987620}
   - component: {fileID: 889987619}
+  - component: {fileID: 889987621}
   m_Layer: 5
   m_Name: GameoverDialog
   m_TagString: Untagged
@@ -3292,6 +3304,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889987617}
   m_CullTransparentMesh: 0
+--- !u!114 &889987621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889987617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ccca65c6a7c4314f93742429a8a727b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  contentTxt: {fileID: 0}
+  bestScoreTxt: {fileID: 317675767}
 --- !u!1 &978846223
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,7 +6062,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1782153165}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 889987621}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1782153165
 MonoBehaviour:
   m_ObjectHideFlags: 0

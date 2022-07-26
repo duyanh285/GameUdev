@@ -40,12 +40,17 @@ namespace DA.DefrnseBasic
         }
 
         // Update is called once per frame
-        void Update()
+       
+        public void Gameover()
         {
+            if (m_isGameover) return;
+            m_isGameover = true;
+            Pref.bestScore = m_score;
+
+            if(guiMng.gameoverDialog)
+            guiMng.gameoverDialog.Show(true);
 
         }
-
-
         IEnumerator SpawnEnemy()
         {
             while (!m_isGameover)
