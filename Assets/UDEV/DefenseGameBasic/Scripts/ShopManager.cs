@@ -25,7 +25,7 @@ namespace DA.DefrnseBasic
                 if (item != null)
                 {
                     if (i == 0)
-                        Pref.SetBool(dataKey,true);
+                        Pref.SetBool(dataKey, true);
                     else
                     {
                         if (!PlayerPrefs.HasKey(dataKey))
