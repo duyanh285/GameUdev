@@ -2241,7 +2241,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 643466079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1253098526}
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &643466079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,7 +2594,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 714443753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1253098526}
+        m_MethodName: Show
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &714443753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4258,6 +4280,7 @@ GameObject:
   - component: {fileID: 1253098523}
   - component: {fileID: 1253098525}
   - component: {fileID: 1253098524}
+  - component: {fileID: 1253098526}
   m_Layer: 5
   m_Name: PauseDialog
   m_TagString: Untagged
@@ -4299,7 +4322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.066037714, g: 0.045167305, b: 0.045167305, a: 0.29803923}
+  m_Color: {r: 0.066037714, g: 0.045167305, b: 0.045167305, a: 0.6509804}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4323,6 +4346,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253098522}
   m_CullTransparentMesh: 0
+--- !u!114 &1253098526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253098522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3254c7452e439954b95632db84e05926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 0}
+  contentTxt: {fileID: 0}
 --- !u!1 &1302325874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,7 +5357,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1632147495}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1253098526}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1632147495
 MonoBehaviour:
   m_ObjectHideFlags: 0
