@@ -6,7 +6,14 @@ namespace DA.DefrnseBasic
 {
     public class ShopManager : MonoBehaviour
     {
+        public static ShopManager Ins;
+
         public ShopItem[] items;
+
+        private void Awake()
+        {
+            Ins = this;
+        }
         // Start is called before the first frame update
         void Start()
         {

@@ -16,15 +16,15 @@ namespace DA.DefrnseBasic
            // Pref.coins = 10000;
             base.Show(isShow);
 
-            m_shopMng = FindObjectOfType<ShopManager>();
-            m_gm = FindObjectOfType<GameManager>();
+            //m_shopMng = FindObjectOfType<ShopManager>();
+           // m_gm = FindObjectOfType<GameManager>();
 
             UpdateUI();
         }
 
         public bool IsComponentsNull()
         {
-            return m_shopMng == null && m_gm == null || gridRoot == null;
+            return ShopManager.Ins == null && m_gm == null || gridRoot == null;
         }
 
         private void UpdateUI()
@@ -33,7 +33,7 @@ namespace DA.DefrnseBasic
 
             ClearChilds();
 
-            var items = m_shopMng.items;
+            var items = ShopManager .Ins.items;
 
             if (items == null || items.Length <= 0) return;
 
@@ -86,8 +86,8 @@ namespace DA.DefrnseBasic
 
                 UpdateUI();
 
-                if (m_gm.guiMng)
-                    m_gm.guiMng.UpdateGameplayCoins();
+                //  if (m_gm.guiMng)
+                GUIManager.Ins.UpdateGameplayCoins();
             }
             else
             {

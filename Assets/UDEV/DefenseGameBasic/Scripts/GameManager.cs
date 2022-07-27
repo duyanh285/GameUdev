@@ -7,31 +7,50 @@ namespace DA.DefrnseBasic
 {
     public class GameManager : MonoBehaviour, IComponentChecking
     {
+        public static GameManager Ins;
+
         public float spawnTime;
         public Enemy[] enemyPrefabs;
-        public GUIManager guiMng;
+       // public GUIManager guiMng;
         public ShopManager shopMng;
         private Player m_curPlayer;
         private bool m_isGameover;
         private int m_score;
-        public AudioController auCtr;
+       // public AudioController auCtr;
 
 
         public int Score { get => m_score; set => m_score = value; }
 
+        private void Awake()
+        {
+            Ins = this;
+        }
 
+        private void MakeSingleton()
+        {
+            if (Ins == null)
+            {
+                Ins = this;
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+                
+        }
         // Start is called before the first frame update
         void Start()
         {
             if (IsComponentsNull()) return;
 
-            guiMng.ShowGameGUI(false);
-            guiMng.UpdateMainCoins();
+            GUIManager .Ins.ShowGameGUI(false);
+            GUIManager.Ins.UpdateMainCoins();
         }
 
         public bool IsComponentsNull()
         {
-            return guiMng == null || shopMng == null || auCtr == null;
+            return GUIManager.Ins == null || shopMng == null || AudioController.Ins == null;
         }
 
 
@@ -41,9 +60,9 @@ namespace DA.DefrnseBasic
             ActivePlayer();
             StartCoroutine(SpawnEnemy());
 
-            guiMng.ShowGameGUI(true);
-            guiMng.UpdateGameplayCoins();
-            auCtr.PlayBgm();
+            GUIManager.Ins.ShowGameGUI(true);
+            GUIManager.Ins.UpdateGameplayCoins();
+            AudioController.Ins.PlayBgm();
 
         }
 
@@ -71,9 +90,9 @@ namespace DA.DefrnseBasic
             m_isGameover = true;
             Pref.bestScore = m_score;
 
-            if (guiMng.gameoverDialog)
-                guiMng.gameoverDialog.Show(true);
-            auCtr.PlaySound(auCtr.gameover);
+            if (GUIManager.Ins.gameoverDialog)
+                GUIManager.Ins.gameoverDialog.Show(true);
+            AudioController.Ins.PlaySound(AudioController.Ins.gameover);
 
         }
         IEnumerator SpawnEnemy()
