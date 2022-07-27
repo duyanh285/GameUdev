@@ -13,7 +13,7 @@ namespace DA.DefrnseBasic
 
         public override void Show(bool isShow)
         {
-            Pref.coins = 10000;
+           // Pref.coins = 10000;
             base.Show(isShow);
 
             m_shopMng = FindObjectOfType<ShopManager>();
