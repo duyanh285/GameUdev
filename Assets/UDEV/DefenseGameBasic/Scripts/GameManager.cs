@@ -5,14 +5,16 @@ using UnityEngine;
 
 namespace DA.DefrnseBasic
 {
-    public class GameManager : MonoBehaviour,IComponentChecking
+    public class GameManager : MonoBehaviour, IComponentChecking
     {
         public float spawnTime;
         public Enemy[] enemyPrefabs;
         public GUIManager guiMng;
+        public ShopManager shopMng;
+        private Player m_curPlayer;
         private bool m_isGameover;
         private int m_score;
-        
+
 
         public int Score { get => m_score; set => m_score = value; }
 
@@ -26,29 +28,49 @@ namespace DA.DefrnseBasic
             guiMng.UpdateMainCoins();
         }
 
+        public bool IsComponentsNull()
+        {
+            return guiMng == null || shopMng == null;
+        }
+
+
         public void PlayGame()
         {
+            ActivePlayer();
             StartCoroutine(SpawnEnemy());
 
             guiMng.ShowGameGUI(true);
             guiMng.UpdateGameplayCoins();
+
+
         }
 
-        public bool IsComponentsNull()
+        public void ActivePlayer()
         {
-            return guiMng == null;
-        }
+            if (IsComponentsNull()) return;
 
+            if (m_curPlayer)
+                Destroy(m_curPlayer.gameObject);
+
+            var shopItems = shopMng.items;
+
+            if (shopItems == null || shopItems.Length <= 0) return;
+
+            var newPlayerPb = shopItems[Pref.curPlayerId].playerPrefab;
+
+            if (newPlayerPb)
+                m_curPlayer = Instantiate(newPlayerPb, new Vector3(-7f, -1f, 0f), Quaternion.identity);
+        }
         // Update is called once per frame
-       
+
         public void Gameover()
         {
             if (m_isGameover) return;
             m_isGameover = true;
             Pref.bestScore = m_score;
 
-            if(guiMng.gameoverDialog)
-            guiMng.gameoverDialog.Show(true);
+            if (guiMng.gameoverDialog)
+                guiMng.gameoverDialog.Show(true);
 
         }
         IEnumerator SpawnEnemy()
@@ -68,6 +90,6 @@ namespace DA.DefrnseBasic
                 }
                 yield return new WaitForSeconds(spawnTime);
             }
-        }   
+        }
     }
 }
