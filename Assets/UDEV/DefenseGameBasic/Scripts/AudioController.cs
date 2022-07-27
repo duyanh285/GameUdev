@@ -21,6 +21,15 @@ namespace DA.DefrnseBasic
         public AudioClip gameover;
         public AudioClip[] bgms;
 
+        private void Start()
+        {
+            if (musicAus == null || soundAus == null) return;
+            musicVol = Pref.musicVol;
+            soundVol = Pref.soundVol;
+
+            musicAus.volume = musicVol;
+            soundAus.volume = soundVol;
+        }
 
         public void PlaySound(AudioClip[] sounds, AudioSource aus = null)
         {
