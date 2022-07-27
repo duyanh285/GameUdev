@@ -14,6 +14,7 @@ namespace DA.DefrnseBasic
         private Player m_curPlayer;
         private bool m_isGameover;
         private int m_score;
+        public AudioController auCtr;
 
 
         public int Score { get => m_score; set => m_score = value; }
@@ -30,18 +31,19 @@ namespace DA.DefrnseBasic
 
         public bool IsComponentsNull()
         {
-            return guiMng == null || shopMng == null;
+            return guiMng == null || shopMng == null || auCtr == null;
         }
 
 
         public void PlayGame()
         {
+            if (IsComponentsNull()) return;
             ActivePlayer();
             StartCoroutine(SpawnEnemy());
 
             guiMng.ShowGameGUI(true);
             guiMng.UpdateGameplayCoins();
-
+            auCtr.PlayBgm();
 
         }
 
@@ -71,6 +73,7 @@ namespace DA.DefrnseBasic
 
             if (guiMng.gameoverDialog)
                 guiMng.gameoverDialog.Show(true);
+            auCtr.PlaySound(auCtr.gameover);
 
         }
         IEnumerator SpawnEnemy()
